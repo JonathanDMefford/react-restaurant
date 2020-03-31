@@ -3,17 +3,17 @@ import MenuItem from './menuitem';
 
 
 
-function BottomMenu(props) {
+function SplitMenu(props) {
     return (
         <div className='row'>
             <div className='col-6 mt-4'>
-                <h1 className='text-center border-bottom'>Sides</h1>
+                <h1 className='text-center border-bottom'>{props.title1}</h1>
                 <p>
                     <MenuItem menu={props.menu} />
                 </p>
             </div>
             <div className='col-6 mt-4'>
-                <h1 className='text-center border-bottom'>Desserts</h1>
+                <h1 className='text-center border-bottom'>{props.title2}</h1>
                 <p>
                     <MenuItem menu={props.menu} />
                 </p>
@@ -24,4 +24,4 @@ function BottomMenu(props) {
 
 
 
-export default BottomMenu
+export default SplitMenu
