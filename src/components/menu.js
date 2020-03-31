@@ -1,6 +1,7 @@
 import React from 'react';
 import TopMenu from './topmenu';
 import BottomMenu from './bottommenu';
+import MenuItem from './menuitem';
 const axios = require('axios');
 
 
@@ -22,10 +23,13 @@ class Menu extends React.Component {
     //sides arr
     //desserts arr
 
+    //append main array
+
     async generateMenu() {
         let result = await axios.get('https://entree-f18.herokuapp.com/v1/menu')
             .then(function (response) {
-                return response.data.menu_items;
+                let mainArr = response.data.menu_items;
+                return mainArr;
                 console.log(response);
             })
             .catch(function (error) {
@@ -58,7 +62,7 @@ class Menu extends React.Component {
     render() {
         return (
             <div className='container'>
-                <TopMenu />
+                <TopMenu menu={this.state.menuItems}/>
                 <div className='row'>
                     <div className='col-12 mt-4'>
                         <h1 className='text-center border-bottom'>Main Course</h1>
@@ -72,7 +76,7 @@ class Menu extends React.Component {
                         </p>
                     </div>
                 </div>
-                <BottomMenu />
+                <BottomMenu menu={this.state.menuItems}/>
             </div>
         );
     }

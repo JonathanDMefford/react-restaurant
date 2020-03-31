@@ -7,11 +7,17 @@ class MenuItem extends React.Component {
         super(props);
     }
 
+
+    //render list and number of items depending on which parent component and how many they require
+
     render() {
         return (
             <div>
-                //loop through menu items 
-                //display number of menu items depending on which section of menu
+                <ul>
+                    {this.props.menu.map((item, idx) =>
+                        <li key={idx}>{item.description}</li>
+                    )}
+                </ul>
             </div>
         );
     }
