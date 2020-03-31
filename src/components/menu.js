@@ -1,13 +1,59 @@
 import React from 'react';
 import TopMenu from './topmenu';
 import BottomMenu from './bottommenu';
+const axios = require('axios');
+
 
 
 
 class Menu extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            menuItems: [],
+            itemCost: [],
+        };
     }
+    //build main array with consecutive calls
+    //loader 
+    //app arr
+    //lunch arr
+    //main course arr
+    //sides arr
+    //desserts arr
+
+    async generateMenu() {
+        let result = await axios.get('https://entree-f18.herokuapp.com/v1/menu')
+            .then(function (response) {
+                return response.data.menu_items;
+                console.log(response);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                // always executed
+            });
+            console.log(result);
+            this.setState({
+                menuItems: result,
+            });
+    }
+
+    componentDidMount() {
+        this.generateMenu();
+    }
+
+    componentDidUpdate() {
+
+    }
+
+
+
+
+
+
 
     render() {
         return (
