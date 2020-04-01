@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Menu from './components/menu';
+import MainPage from './components/mainpage';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Menu />
+    <MainPage />
   </React.StrictMode>,
   document.getElementById('root')
 );

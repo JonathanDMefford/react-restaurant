@@ -4,13 +4,7 @@ import React from 'react';
 
 function MenuItem(props) {
     return (
-        <div>
-            <ul>
-                {props.menu.map((item, idx) =>
-                    <li key={idx}>{item.description}</li>
-                )}
-            </ul>
-        </div>
+        <li className='py-3'>{props.description}</li>
     );
 }
 
