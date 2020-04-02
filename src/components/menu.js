@@ -19,9 +19,9 @@ class Menu extends React.Component {
                 <div>
                     <ul className='list-unstyled'>
                         {this.props.menu.length > 0 ? Array.apply(0, Array(this.props.amount)).map((item, idx) => {
-                            if (this.props.amount == 15) {
+                            {/* if (this.props.amount == 15) {
                                 console.log(this.props.menu);
-                            }
+                            } */}
                             return <MenuItem key={idx} price={this.applyPrice()} description={this.props.menu[idx].description} />
                         }
                         ) : null}
