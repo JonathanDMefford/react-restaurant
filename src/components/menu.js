@@ -7,25 +7,26 @@ class Menu extends React.Component {
         super(props);
     }
 
+
+    applyPrice() {
+        return Math.floor(Math.random() * 25) + 5;
+    }
+
     render() {
         return (
             <div className={this.props.styles}>
                 <h1 className='text-center border-bottom'>{this.props.title}</h1>
-                <p>
-                    <div>
-                        <ul>
-                            {this.props.menu.length > 0 ? Array.apply(0, Array(this.props.amount)).map((item, idx) => {
-                                {/* console.log(idx);
-                            console.log(props); */}
-                                if (this.props.amount == 15) {
-                                    console.log(this.props.menu);
-                                }
-                                return <MenuItem key={idx} description={this.props.menu[idx].description} />
+                <div>
+                    <ul className='list-unstyled'>
+                        {this.props.menu.length > 0 ? Array.apply(0, Array(this.props.amount)).map((item, idx) => {
+                            if (this.props.amount == 15) {
+                                console.log(this.props.menu);
                             }
-                            ) : null}
-                        </ul>
-                    </div>
-                </p>
+                            return <MenuItem key={idx} price={this.applyPrice()} description={this.props.menu[idx].description} />
+                        }
+                        ) : null}
+                    </ul>
+                </div>
             </div>
         );
     }
