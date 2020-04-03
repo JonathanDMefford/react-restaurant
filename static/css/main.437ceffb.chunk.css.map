@@ -1,0 +1,1 @@
+{"version":3,"sources":["mainpage.css"],"names":[],"mappings":"AAIA,gBAHI,wBAMJ,CAHA,MAEI,aACJ","file":"main.437ceffb.chunk.css","sourcesContent":["html, body {\n    background-color: rgb(122, 66, 65);\n}\n\n#root {\n    background-color: rgb(122, 66, 65);\n    color: rgb(202, 191, 30);\n}"]}
