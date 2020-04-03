@@ -13,6 +13,11 @@ function PageHeader() {
                     </h1>
                 </div>
             </div>
+            <div className='row text-center mt-4'>
+                <div className='col-12'>
+                    <img src={process.env.PUBLIC_URL + '/cafe.png'} alt='corona cafe' />
+                </div>
+            </div>
         </div>
     );
 }
