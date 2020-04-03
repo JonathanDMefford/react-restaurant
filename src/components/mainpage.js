@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from './title';
 import Menu from './menu';
+import './mainpage.css';
 
 
 
@@ -13,7 +14,7 @@ function MainPage() {
                 <Menu title={'Lunch Menu'} styles={'col-6 mt-4'} amount={10} />
             </div>
             <div className='row'>
-                <Menu title={'Main Course'} styles={'col-12 mt-4'} amount={15} />
+                <Menu title={'Main Course'} styles={'col-12 text-center mt-4'} amount={15} />
             </div>
             <div className='row'>
                 <Menu title={'Sides'} styles={'col-6 mt-4'} amount={8} />

@@ -3,6 +3,7 @@ import MenuItem from './menuitem';
 const axios = require('axios');
 
 
+
 class Menu extends React.Component {
     constructor(props) {
         super(props);
@@ -39,7 +40,7 @@ class Menu extends React.Component {
         let newMenuList = JSON.parse(localStorage.getItem(this.props.title)) || [];
         if (newMenuList.length > 0) {
             this.setState({
-                menuItems: newMenuList,
+                menuItems: newMenuList
             });
         } else {
             await this.generateMenu();
@@ -50,11 +51,11 @@ class Menu extends React.Component {
         window.localStorage.setItem(this.props.title, JSON.stringify(this.state.menuItems));
     }
 
-
     applyPrice() {
         return Math.floor(Math.random() * 25) + 5;
     }
 
+    
     render() {
         return (
             <div className={this.props.styles}>
